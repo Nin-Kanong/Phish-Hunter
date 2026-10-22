@@ -1,0 +1,40 @@
+# Frontend Component Tree
+
+Next.js App Router target:
+```text
+src/app/
+  page.jsx
+  investigate/[caseId]/page.jsx
+  investigate/[caseId]/layout.jsx
+  api/health/route.js
+components/
+  intake/TargetInput.jsx
+  intake/ScanModeSelector.jsx
+  dossier/TargetDossier.jsx
+  dossier/ModuleNav.jsx
+  command/CommandCenter.jsx
+  domain/DomainInformation.jsx
+  attack-surface/AttackSurface.jsx
+  map/LiveGlobalMap.jsx
+  map/Globe3D.jsx
+  map/Map2D.jsx
+  map/CountryLayer.jsx
+  map/MarkerLayer.jsx
+  map/LocationDetailPanel.jsx
+  map/BranchHierarchy.jsx
+  dns/DNSFullStack.jsx
+  dns/DNSLookupMatrix.jsx
+  registration/WhoisRdap.jsx
+  certificates/CertificateTimeline.jsx
+  http/WebForensics.jsx
+  osint/AdvancedOSINT.jsx
+  graph/InfrastructureGraph.jsx
+  isolate/IsolateEngine.jsx
+  evidence/EvidenceLocker.jsx
+  ai/SilentInsight.jsx
+  common/EvidenceBadge.jsx
+  common/ConfidenceMeter.jsx
+  common/ProviderState.jsx
+  common/FieldInspector.jsx
+  common/ExportMenu.jsx
+```

@@ -1,0 +1,29 @@
+services:
+  - type: web
+    name: phish-hunter
+    runtime: python
+    plan: 1c-2g
+    buildCommand: python -m pip install -r requirements/prod.txt
+    startCommand: python -m uvicorn phishhunter.asgi:app --host 0.0.0.0 --port $PORT --proxy-headers --forwarded-allow-ips "*"
+    healthCheckPath: /health
+    disk:
+      name: phish-hunter-evidence
+      mountPath: /var/data
+      sizeGB: 10
+    envVars:
+      - key: APP_NAME
+        value: Phish-Hunter
+      - key: APP_ENV
+        value: production
+      - key: SECRET_KEY
+        generateValue: true
+      - key: DATABASE_URL
+        sync: false
+      - key: COOKIE_SECURE
+        value: "true"
+      - key: MAX_UPLOAD_MB
+        value: "100"
+      - key: MAX_UPLOAD_BATCH_MB
+        value: "100"
+      - key: STORAGE_DIR
+        value: /var/data/storage
